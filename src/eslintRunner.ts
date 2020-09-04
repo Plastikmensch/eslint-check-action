@@ -1,4 +1,5 @@
-const github = require('@actions/github');
+//const github = require('@actions/github');
+import * as github from '@actions/github'
 import { GitHub } from '@actions/github/lib/utils';
 import { error as logError } from '@actions/core';
 import eslint from 'eslint';
