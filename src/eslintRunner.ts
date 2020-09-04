@@ -1,4 +1,5 @@
 const github = require('@actions/github');
+import { GitHub } from '@actions/github/lib/utils'
 import { error as logError } from '@actions/core';
 import eslint from 'eslint';
 import path from 'path';
@@ -6,7 +7,7 @@ import path from 'path';
 class EslintRunner {
   private name = 'Eslint Run';
 
-  private kit: InstanceType<typeof github>;
+  private kit: InstanceType<typeof GitHub>;
 
   private opts: ActionOptionsType;
 
