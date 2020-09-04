@@ -1,5 +1,5 @@
 const github = require('@actions/github');
-import { GitHub } from '@actions/github/lib/utils'
+import { GitHub } from '@actions/github/lib/utils';
 import { error as logError } from '@actions/core';
 import eslint from 'eslint';
 import path from 'path';
