@@ -1,4 +1,4 @@
-import { GitHub } from '@actions/github';
+const github = require('@actions/github');
 import { error as logError } from '@actions/core';
 import eslint from 'eslint';
 import path from 'path';
@@ -6,14 +6,14 @@ import path from 'path';
 class EslintRunner {
   private name = 'Eslint Run';
 
-  private kit: GitHub;
+  private kit: InstanceType<typeof github>;
 
   private opts: ActionOptionsType;
 
   checkRunID: number = -1;
 
   constructor(ghToken: string, options: ActionOptionsType) {
-    this.kit = new GitHub(ghToken);
+    this.kit = github.getOctokit(ghToken);
     this.opts = options;
   }
 
